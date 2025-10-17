@@ -705,6 +705,7 @@ static void CB2_InitBattleInternal(void)
     if (!(gBattleTypeFlags & BATTLE_TYPE_LINK))
     {
         CreateNPCTrainerParty(&gEnemyParty[0], gTrainerBattleOpponent_A);
+        
         SetWildMonHeldItem();
     }
 
@@ -1531,14 +1532,110 @@ static void SpriteCB_UnusedDebugSprite_Step(struct Sprite *sprite)
         break;
     }
 }
+static u8 GetNumberOfBadges(void){
+	u8 count = 0;
+	if(FlagGet(FLAG_BADGE01_GET) == TRUE)
+		count++;
+	if(FlagGet(FLAG_BADGE02_GET) == TRUE)
+		count++;
+	if(FlagGet(FLAG_BADGE03_GET) == TRUE)
+		count++;
+	if(FlagGet(FLAG_BADGE04_GET) == TRUE)
+		count++;
+	if(FlagGet(FLAG_BADGE05_GET) == TRUE)
+		count++;
+	if(FlagGet(FLAG_BADGE06_GET) == TRUE)
+		count++;
+	return count;
+}
 
-static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
-{
+
+static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum){
+	u8 testpoke1 = 0;//set to 0 to begin with, team average lv
+	u8 min = 0;//minimum of range
+	u8 max = 0;//max
+	u8 actuallevel = 0;//what pokemon will appear as
+	u8 bosslevel = 0;
     u32 nameHash = 0;
+    u8 badgeAmount = 0;
+    u8 trainerfloor = 0;
+    u8 bossfloor = 0;
     u32 personalityValue;
     u8 fixedIV;
     s32 i, j;
+    testpoke1 = GetMonData(&gPlayerParty[0], MON_DATA_LEVEL);
+    //start getting avg level:
+    if (GetMonData(&gPlayerParty[5], MON_DATA_SPECIES) != SPECIES_NONE)//if full party
+    testpoke1 = (GetMonData(&gPlayerParty[0], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[1], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[2], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[3], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[4], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[5], MON_DATA_LEVEL)) / 6;
+    if (GetMonData(&gPlayerParty[5], MON_DATA_SPECIES) == SPECIES_NONE)// no slot 6 (5 poke)
+    testpoke1 = (GetMonData(&gPlayerParty[0], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[1], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[2], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[3], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[4], MON_DATA_LEVEL)) / 5;
+    if (GetMonData(&gPlayerParty[4], MON_DATA_SPECIES) == SPECIES_NONE)//no slot 5 (4 poke)
+    testpoke1 = (GetMonData(&gPlayerParty[0], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[1], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[2], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[3], MON_DATA_LEVEL)) / 4;
+    if (GetMonData(&gPlayerParty[3], MON_DATA_SPECIES) == SPECIES_NONE) //three poke
+    testpoke1 = (GetMonData(&gPlayerParty[0], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[1], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[2])) / 3;
+    if (GetMonData(&gPlayerParty[2], MON_DATA_SPECIES) == SPECIES_NONE)//two poke
+    testpoke1 = (GetMonData(&gPlayerParty[0], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[1])) / 2;
+    if (GetMonData(&gPlayerParty[1], MON_DATA_SPECIES) == SPECIES_NONE)//only one
+    testpoke1 = (GetMonData(&gPlayerParty[0], MON_DATA_LEVEL));
+    //at this point testpoke1 is the average of the levels
+    min = testpoke1;
+//testing badgeAmount
+	if(FlagGet(FLAG_BADGE01_GET) == TRUE)
+		badgeAmount++;
+	if(FlagGet(FLAG_BADGE02_GET) == TRUE)
+		badgeAmount++;
+	if(FlagGet(FLAG_BADGE03_GET) == TRUE)
+		badgeAmount++;
+	if(FlagGet(FLAG_BADGE04_GET) == TRUE)
+		badgeAmount++;
+	if(FlagGet(FLAG_BADGE05_GET) == TRUE)
+		badgeAmount++;
+	if(FlagGet(FLAG_BADGE06_GET) == TRUE)
+		badgeAmount++;
 
+     //
+    if (badgeAmount < 1)
+    bossfloor = 13;
+    if (badgeAmount == 1){
+    trainerfloor = 10;
+    bossfloor = 19;
+    }
+    if (badgeAmount == 2){
+    trainerfloor = 15;
+    bossfloor = 22;
+    }
+    if (badgeAmount == 3){
+    trainerfloor = 20;
+    bossfloor = 26;
+    }
+    if (badgeAmount == 4){
+    trainerfloor = 24;
+    bossfloor = 38;
+    }
+    if (badgeAmount == 5){
+    trainerfloor = 35;
+    bossfloor = 40;
+    }
+    if (badgeAmount == 6){
+    trainerfloor = 37;
+    bossfloor = 42;
+    }
+    if (badgeAmount > 6){
+    trainerfloor = 40;
+    }
+    
+//}
+    max = testpoke1 + 2;
+    //u8 badgeCount = 0;
+    //badgeCount = GetNumberOfBadges();
+    actuallevel = ( Random() % (max - min + 1) + min);
+    bosslevel = ( Random() % ((max + 2) - (min + 2) + 1) + min);
+    if(actuallevel < trainerfloor)
+    actuallevel = trainerfloor;
+    if(bosslevel < bossfloor)
+    bosslevel = bossfloor;
+    if (actuallevel < 1)
+	    actuallevel = testpoke1 + 1;//if problem, set to team lv + 1
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
 
@@ -1570,7 +1667,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                CreateMon(&party[i], partyData[i].species, actuallevel, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
                 break;
             }
             case F_TRAINER_PARTY_CUSTOM_MOVESET:
@@ -1582,7 +1679,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                //if(partyData[i].lvl > bosslevel)
+                //bosslevel = partyData[i].lvl;
+                CreateMon(&party[i], partyData[i].species, bosslevel, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
 
                 for (j = 0; j < MAX_MON_MOVES; j++)
                 {
@@ -1600,7 +1699,8 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                CreateMon(&party[i], partyData[i].species, actuallevel, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                
 
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
                 break;
@@ -1611,12 +1711,12 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 
                 for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; j++)
                     nameHash += gSpeciesNames[partyData[i].species][j];
-
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                if(partyData[i].lvl > bosslevel)
+                bosslevel = partyData[i].lvl;
+                CreateMon(&party[i], partyData[i].species, bosslevel, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
-
                 for (j = 0; j < MAX_MON_MOVES; j++)
                 {
                     SetMonData(&party[i], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
@@ -1629,6 +1729,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 
         gBattleTypeFlags |= gTrainers[trainerNum].doubleBattle;
     }
+    
 
     return gTrainers[trainerNum].partySize;
 }
@@ -2651,6 +2752,7 @@ static void BattleIntroDrawPartySummaryScreens(void)
     {
         for (i = 0; i < PARTY_SIZE; i++)
         {
+
             if (GetMonData(&gEnemyParty[i], MON_DATA_SPECIES_OR_EGG) == SPECIES_NONE
              || GetMonData(&gEnemyParty[i], MON_DATA_SPECIES_OR_EGG) == SPECIES_EGG)
             {

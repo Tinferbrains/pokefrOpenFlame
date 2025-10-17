@@ -1944,6 +1944,13 @@ bool8 ScrCmd_pokemart(struct ScriptContext * ctx)
     ScriptContext_Stop();
     return TRUE;
 }
+bool8 levelmart()
+{
+    u8 menu[] = { ITEM_POTION , ITEM_NONE };
+    CreatePokemartMenu(menu);
+    ScriptContext_Stop();
+    return TRUE;
+}
 
 bool8 ScrCmd_pokemartdecoration(struct ScriptContext * ctx)
 {

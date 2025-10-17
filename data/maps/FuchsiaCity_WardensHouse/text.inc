@@ -24,9 +24,7 @@ FuchsiaCity_WardensHouse_Text_ThanksSonGiveYouSomething::
     .string "No one could understand a word\n"
     .string "that I said, not a one!\p"
     .string "I was too ashamed to show my face\n"
-    .string "around the OFFICE, even.\p"
-    .string "Let me give you something for your\n"
-    .string "trouble.$"
+    .string "around the OFFICE, even.$"
 
 FuchsiaCity_WardensHouse_Text_ThanksLassieGiveYouSomething::
     .string "WARDEN: Thank you, lassie!\n"
@@ -34,9 +32,7 @@ FuchsiaCity_WardensHouse_Text_ThanksLassieGiveYouSomething::
     .string "No one could understand a word\n"
     .string "that I said, not a one!\p"
     .string "I was too ashamed to show my face\n"
-    .string "around the OFFICE, even.\p"
-    .string "Let me give you something for your\n"
-    .string "trouble.$"
+    .string "around the OFFICE, even.$"
 
 FuchsiaCity_WardensHouse_Text_ReceivedHM04FromWarden::
     .string "{PLAYER} received HM04\n"

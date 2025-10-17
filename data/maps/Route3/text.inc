@@ -31,15 +31,16 @@ Route3_Text_BenPostBattle::
     .string "30 POKéMON.$"
 
 Route3_Text_JaniceIntro::
-    .string "Excuse me!\n"
-    .string "You looked at me, didn't you?$"
+    .string "Pokemon that love \n"
+    .string "the moon like to \n"
+    .string "gather here.$"
 
 Route3_Text_JaniceDefeat::
     .string "You're mean!$"
 
 Route3_Text_JanicePostBattle::
-    .string "You shouldn't be staring if you\n"
-    .string "don't want to battle!$"
+    .string "Some Pokemon only evolve\n"
+    .string "with a MOON STONE.$"
 
 Route3_Text_GregIntro::
     .string "Are you a TRAINER?\n"

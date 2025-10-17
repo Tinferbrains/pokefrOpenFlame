@@ -21,11 +21,12 @@ CeladonCity_Gym_EventScript_DefeatedErika::
 
 CeladonCity_Gym_EventScript_GiveTM19::
 	msgbox CeladonCity_Gym_Text_ExplainRainbowBadgeTakeThis
-	checkitemspace ITEM_TM19
+	checkitemspace ITEM_HM01
 	goto_if_eq VAR_RESULT, FALSE, CeladonCity_Gym_EventScript_NoRoomForTM19
-	giveitem_msg CeladonCity_Gym_Text_ReceivedTM19FromErika, ITEM_TM19
+	giveitem_msg CeladonCity_Gym_Text_ReceivedTM19FromErika, ITEM_HM01
 	setflag FLAG_GOT_TM19_FROM_ERIKA
 	msgbox CeladonCity_Gym_Text_ExplainTM19
+        setflag FLAG_GOT_HM01
 	release
 	end
 

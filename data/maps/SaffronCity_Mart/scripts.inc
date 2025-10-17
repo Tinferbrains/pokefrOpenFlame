@@ -15,7 +15,7 @@ SaffronCity_Mart_EventScript_Clerk::
 	faceplayer
 	message Text_MayIHelpYou
 	waitmessage
-	pokemart SaffronCity_Mart_Items
+	pokemart 0
 	msgbox Text_PleaseComeAgain
 	release
 	end

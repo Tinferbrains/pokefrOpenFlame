@@ -891,8 +891,9 @@ Text_WelcomeWantToHealPkmn::
 	.string "POKéMON back to perfect health?$"
 
 Text_TakeYourPkmnForFewSeconds::
-	.string "Okay, I'll take your POKéMON for a\n"
-	.string "few seconds.$"
+	.string "We can heal your\n"
+	.string "POKéMON back to perfect health.$"
+
 
 Text_WeHopeToSeeYouAgain::
 	.string "We hope to see you again!$"

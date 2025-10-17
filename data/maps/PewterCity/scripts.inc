@@ -26,7 +26,7 @@ PewterCity_EventScript_GymGuide::
 	waitmovement 0
 	fadedefaultbgm
 	removeobject LOCALID_GYM_GUIDE
-	clearflag FLAG_HIDE_PEWTER_CITY_GYM_GUIDE
+	setflag FLAG_HIDE_PEWTER_CITY_GYM_GUIDE
 	release
 	end
 
@@ -286,7 +286,7 @@ PewterCity_EventScript_GymGuideTrigger::
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox PewterCity_Text_BrocksLookingForChallengersFollowMe
 	closemessage
-	playbgm MUS_FOLLOW_ME, 0
+/*	playbgm MUS_FOLLOW_ME, 0
 	call_if_eq VAR_TEMP_1, 0, PewterCity_EventScript_WalkToGymTop
 	call_if_eq VAR_TEMP_1, 1, PewterCity_EventScript_WalkToGymMid
 	call_if_eq VAR_TEMP_1, 2, PewterCity_EventScript_WalkToGymBottom
@@ -296,7 +296,8 @@ PewterCity_EventScript_GymGuideTrigger::
 	waitmovement 0
 	fadedefaultbgm
 	removeobject LOCALID_GYM_GUIDE
-	clearflag FLAG_HIDE_PEWTER_CITY_GYM_GUIDE
+	clearflag FLAG_HIDE_PEWTER_CITY_GYM_GUIDE*/
+	setflag FLAG_HIDE_PEWTER_CITY_GYM_GUIDE
 	releaseall
 	end
 

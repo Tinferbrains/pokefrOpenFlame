@@ -64,8 +64,10 @@ PewterCity_Text_SprayingRepelToKeepWildMonsOut::
 
 PewterCity_Text_BrocksLookingForChallengersFollowMe::
     .string "You're a TRAINER, right?\p"
-    .string "BROCK's looking for new\n"
-    .string "challengers. Follow me!$"
+    .string "The gym leader, Brock, is\n"
+    .string "looking for challengers!\n"
+    .string "I hear he gives winners \n"
+    .string "a special rock-type move $"
 
 PewterCity_Text_GoTakeOnBrock::
     .string "If you have the right stuff,\n"

@@ -4,6 +4,8 @@ PalletTown_PlayersHouse_1F_Text_AllBoysLeaveOakLookingForYou::
     .string "It said so on TV.\p"
     .string "Oh, yes. PROF. OAK, next door, was\n"
     .string "looking for you.$"
+MomMapReminder::
+    .string "MOM: Don't forget to grab your MAP"
 
 PalletTown_PlayersHouse_1F_Text_AllGirlsLeaveOakLookingForYou::
     .string "MOM: …Right.\n"

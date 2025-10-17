@@ -8,7 +8,7 @@ CeruleanCity_Gym_Text_MistyIntro::
     .string "with WATER-type POKéMON!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
 
 CeruleanCity_Gym_Text_ExplainTM03::
-    .string "TM03 teaches WATER PULSE.\p"
+    .string "HM03 teaches SURF.\p"
     .string "Use it on an aquatic POKéMON!$"
 
 CeruleanCity_Gym_Text_ExplainCascadeBadge::
@@ -16,14 +16,10 @@ CeruleanCity_Gym_Text_ExplainCascadeBadge::
     .string "POKéMON up to Lv. 30 obey.\p"
     .string "That includes even outsiders you\n"
     .string "got in trades.\p"
-    .string "There's more. You can now use CUT\n"
-    .string "anytime, even out of battle.\p"
-    .string "You can CUT down small trees to\n"
-    .string "open new pathways.\p"
-    .string "You can also have my favorite TM.$"
+    .string "You can also have my favorite HM.$"
 
 CeruleanCity_Gym_Text_ReceivedTM03FromMisty::
-    .string "{PLAYER} received TM03\n"
+    .string "{PLAYER} received HM03\n"
     .string "from MISTY.$"
 
 CeruleanCity_Gym_Text_BetterMakeRoomForThis::

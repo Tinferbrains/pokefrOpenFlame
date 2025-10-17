@@ -18,17 +18,15 @@ VermilionCity_Gym_Text_LtSurgePostBattle::
 VermilionCity_Gym_Text_ExplainThunderBadgeTakeThis::
     .string "The THUNDERBADGE cranks up your\n"
     .string "POKéMON's SPEED!\p"
-    .string "It also lets your POKéMON FLY\n"
-    .string "lightning-quick anytime, kid!\p"
     .string "You're special, kid!\n"
     .string "Take this!$"
 
 VermilionCity_Gym_Text_ReceivedTM34FromLtSurge::
-    .string "{PLAYER} received TM34\n"
+    .string "{PLAYER} received HM05\n"
     .string "from LT. SURGE.$"
 
 VermilionCity_Gym_Text_ExplainTM34::
-    .string "TM34 contains SHOCK WAVE!\p"
+    .string "TM34 contains FLASH!\p"
     .string "Teach it to an ELECTRIC POKéMON!$"
 
 VermilionCity_Gym_Text_MakeRoomInYourBag::

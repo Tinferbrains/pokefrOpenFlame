@@ -88,7 +88,7 @@ static const TrainerSeeFunc sTrainerSeeFuncList2[] = {
 bool8 CheckForTrainersWantingBattle(void)
 {
     u8 i;
-    if (QL_IsTrainerSightDisabled() == TRUE)
+    if (QL_IsTrainerSightDisabled() == FALSE)
         return FALSE;
 
     for (i = 0; i < OBJECT_EVENTS_COUNT; i++)

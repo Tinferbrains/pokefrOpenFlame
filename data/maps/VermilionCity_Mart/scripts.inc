@@ -15,7 +15,7 @@ VermilionCity_Mart_EventScript_Clerk::
 	faceplayer
 	message Text_MayIHelpYou
 	waitmessage
-	pokemart VermilionCity_Mart_Items
+	pokemart 0
 	msgbox Text_PleaseComeAgain
 	release
 	end

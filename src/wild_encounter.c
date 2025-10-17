@@ -154,23 +154,36 @@ static u8 ChooseWildMonIndex_Fishing(u8 rod)
 
 static u8 ChooseWildMonLevel(const struct WildPokemon * info)
 {
+   u8 level;
     u8 lo;
     u8 hi;
     u8 mod;
     u8 res;
-    if (info->maxLevel >= info->minLevel)
-    {
-        lo = info->minLevel;
-        hi = info->maxLevel;
-    }
-    else
-    {
-        lo = info->maxLevel;
-        hi = info->minLevel;
-    }
-    mod = hi - lo + 1;
-    res = Random() % mod;
-    return lo + res;
+    u8 testpoke2; //player average
+    u8 min;
+    u8 max;
+    u8 rand;//wild pk average
+      //start getting avg level:
+    if (GetMonData(&gPlayerParty[5], MON_DATA_SPECIES) != SPECIES_NONE)//if full party
+    testpoke2 = (GetMonData(&gPlayerParty[0], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[1], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[2], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[3], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[4], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[5], MON_DATA_LEVEL)) / 6;
+    if (GetMonData(&gPlayerParty[5], MON_DATA_SPECIES) == SPECIES_NONE)// no slot 6 (5 poke)
+    testpoke2 = (GetMonData(&gPlayerParty[0], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[1], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[2], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[3], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[4], MON_DATA_LEVEL)) / 5;
+    if (GetMonData(&gPlayerParty[4], MON_DATA_SPECIES) == SPECIES_NONE)//no slot 5 (4 poke)
+    testpoke2 = (GetMonData(&gPlayerParty[0], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[1], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[2], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[3], MON_DATA_LEVEL)) / 4;
+    if (GetMonData(&gPlayerParty[3], MON_DATA_SPECIES) == SPECIES_NONE) //three poke
+    testpoke2 = (GetMonData(&gPlayerParty[0], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[1], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[2])) / 3;
+    if (GetMonData(&gPlayerParty[2], MON_DATA_SPECIES) == SPECIES_NONE)//two poke
+    testpoke2 = (GetMonData(&gPlayerParty[0], MON_DATA_LEVEL) + GetMonData(&gPlayerParty[1])) / 2;
+    if (GetMonData(&gPlayerParty[1], MON_DATA_SPECIES) == SPECIES_NONE)//only one
+    testpoke2 = (GetMonData(&gPlayerParty[0], MON_DATA_LEVEL));
+    //at this point testpoke2 is the average of the levels
+    min = testpoke2-2;
+    max = testpoke2 + 1;
+    level = (Random() % (max - min) + min); 
+	if (level < 2)
+	level = testpoke2 - 1;//if there's a problem set to a level behind yours
+    //return lo + res;
+    return level;
 }
 
 static u16 GetCurrentMapWildMonHeaderId(void)

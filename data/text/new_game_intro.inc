@@ -159,32 +159,24 @@ gOakSpeech_Text_AskPlayerGender::
     .string "Or are you a girl?$"
 
 gPikachuIntro_Text_Page1::
-    .string "In the world which you are about to\n"
-    .string "enter, you will embark on a grand\n"
-    .string "adventure with you as the hero.\n"
-    .string "\n"
-    .string "Speak to people and check things\n"
-    .string "wherever you go, be it towns, roads,\n"
-    .string "or caves. Gather information and\n"
-    .string "hints from every source.$"
+    .string "This POKeMON game is a \n"
+    .string "bit different than you be\n"
+    .string "used to. Trainers and wild \n"
+    .string "battles scale with you, so \n"
+    .string "You can't outgrind them. \n"
+    .string "Pokecenters are now used to \n"
+    .string "save your progress, too.$"
 
 gPikachuIntro_Text_Page2::
-    .string "New paths will open to you by helping\n"
-    .string "people in need, overcoming challenges,\n"
-    .string "and solving mysteries.\n"
-    .string "\n"
-    .string "At times, you will be challenged by\n"
-    .string "others and attacked by wild creatures.\n"
-    .string "Be brave and keep pushing on.$"
+    .string "Wild POKeMON are found in places\n"
+    .string "you may not be expecting. \n"
+    .string "It's like a fresh new experience \n"
+    .string "Every time. $"
 
 gPikachuIntro_Text_Page3::
-    .string "Through your adventure, we hope\n"
-    .string "that you will interact with all sorts\n"
-    .string "of people and achieve personal growth.\n"
-    .string "That is our biggest objective.\n"
-    .string "\n"
-    .string "Press the A Button, and let your\n"
-    .string "adventure begin!$"
+    .string "This was entirely the pet project\n"
+    .string "of one guy in his spare time, so if \n"
+    .string "you find bugs, don't freak out. $"
 
 gOakSpeech_Text_WelcomeToTheWorld::
     .string "Hello, there!\n"
@@ -235,9 +227,12 @@ gOakSpeech_Text_RememberRivalsName::
     .string "That's right! I remember now!\n"
     .string "His name is {RIVAL}!\p$"
 
+ 
 gOakSpeech_Text_LetsGo::
-    .string "{PLAYER}!\p"
+     .string "{PLAYER}!\p"
     .string "Your very own POKéMON legend is\n"
     .string "about to unfold!\p"
     .string "A world of dreams and adventures\n"
     .string "with POKéMON awaits! Let's go!$"
+
+    

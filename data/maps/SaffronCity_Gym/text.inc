@@ -1,11 +1,7 @@
 SaffronCity_Gym_Text_SabrinaIntro::
-    .string "I had a vision of your arrival.\p"
-    .string "I have had psychic powers since\n"
-    .string "I was a child.\p"
-    .string "It started when a spoon I\n"
-    .string "carelessly tossed, bent.\p"
-    .string "I dislike battling, but if you wish,\n"
-    .string "I will show you my powers!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
+    .string "I heard you were coming. \n"
+    .string "Let's see how you fare against \n"
+    .string "my flying armada! {PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
 
 SaffronCity_Gym_Text_SabrinaDefeat::
     .string "This loss shocks me!\n"
@@ -16,10 +12,8 @@ SaffronCity_Gym_Text_SabrinaDefeat::
     .string "MARSHBADGE.$"
 
 SaffronCity_Gym_Text_SabrinaPostBattle::
-    .string "Psychic power isn't something that\n"
-    .string "only a few people have.\p"
-    .string "Everyone has psychic power.\n"
-    .string "People just don't realize it.$"
+    .string "You deserve that. Not many \n"
+    .string "have survived my assault$"
 
 SaffronCity_Gym_Text_ExplainMarshBadgeTakeThis::
     .string "The MARSHBADGE makes POKéMON up\n"
@@ -28,16 +22,15 @@ SaffronCity_Gym_Text_ExplainMarshBadgeTakeThis::
     .string "ignoring your orders in battle.\p"
     .string "Just don't raise your POKéMON too\n"
     .string "much to avoid that problem.\p"
-    .string "Wait, please take this TM with you.$"
+    .string "Wait, please take this HM with you.$"
 
 SaffronCity_Gym_Text_ReceivedTM04FromSabrina::
-    .string "{PLAYER} received TM04 from\n"
+    .string "{PLAYER} received HM02 from\n"
     .string "SABRINA.$"
 
 SaffronCity_Gym_Text_ExplainTM04::
-    .string "TM04 is CALM MIND.\p"
-    .string "It makes the POKéMON concentrate\n"
-    .string "to raise both SP. ATK and SP. DEF.$"
+    .string "TM04 is FLY. It's a\n"
+    .string "convenient way to travel.$"
 
 SaffronCity_Gym_Text_BagFullOfOtherItems::
     .string "Your BAG is full of other items.$"
@@ -56,14 +49,14 @@ SaffronCity_Gym_Text_AmandaPostBattle::
     .string "and will yourself to victory.$"
 
 SaffronCity_Gym_Text_JohanIntro::
-    .string "Does our unseen power scare you?$"
+    .string "Does our power scare you?$"
 
 SaffronCity_Gym_Text_JohanDefeat::
     .string "I never foresaw this!$"
 
 SaffronCity_Gym_Text_JohanPostBattle::
-    .string "PSYCHIC POKéMON fear only ghosts\n"
-    .string "and bugs!$"
+    .string "FLYING POKéMON fear only rock\n"
+    .string "and electric!$"
 
 SaffronCity_Gym_Text_StacyIntro::
     .string "POKéMON take on the appearance of\n"
@@ -75,7 +68,7 @@ SaffronCity_Gym_Text_StacyDefeat::
 
 SaffronCity_Gym_Text_StacyPostBattle::
     .string "I have much to learn still…\p"
-    .string "I must master PSYCHIC and teach it\n"
+    .string "I must master FLY and teach it\n"
     .string "to my POKéMON…$"
 
 SaffronCity_Gym_Text_TyronIntro::
@@ -120,7 +113,7 @@ SaffronCity_Gym_Text_CameronPostBattle::
 
 SaffronCity_Gym_Text_PrestonIntro::
     .string "SAFFRON POKéMON GYM is famous for\n"
-    .string "training psychics.\p"
+    .string "powerful birds.\p"
     .string "You want to see SABRINA, don't\n"
     .string "you? I can tell!$"
 
@@ -128,23 +121,23 @@ SaffronCity_Gym_Text_PrestonDefeat::
     .string "Arrrgh!$"
 
 SaffronCity_Gym_Text_PrestonPostBattle::
-    .string "That's right! I used telepathy to\n"
-    .string "read your mind!$"
+    .string "All right!\n"
+    .string "I yield!$"
 
 SaffronCity_Gym_Text_GymGuyAdvice::
     .string "Yo!\n"
     .string "Champ in the making!\p"
-    .string "SABRINA's POKéMON use psychic\n"
-    .string "power instead of force.\p"
+    .string "SABRINA's POKéMON use flying\n"
+    .string "power instead of upfront force.\p"
     .string "FIGHTING POKéMON are especially\n"
-    .string "weak against PSYCHIC POKéMON.\p"
+    .string "weak against ROCK and ELECTRIC POKéMON.\p"
     .string "They'll get destroyed before they\n"
     .string "can even aim a punch!$"
 
 SaffronCity_Gym_Text_GymGuyPostVictory::
-    .string "Psychic power, huh?\p"
-    .string "If I had that, I'd make a bundle\n"
-    .string "at the slots!$"
+    .string "Flying power, huh?\p"
+    .string "If I had that, I'd be able\n"
+    .string "to go anywhere!$"
 
 SaffronCity_Gym_Text_GymStatue::
     .string "SAFFRON POKéMON GYM\n"

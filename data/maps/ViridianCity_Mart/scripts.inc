@@ -58,7 +58,7 @@ ViridianCity_Mart_EventScript_Clerk::
 	goto_if_questlog EventScript_ReleaseEnd
 	message Text_MayIHelpYou
 	waitmessage
-	pokemart ViridianCity_Mart_Items
+	pokemart 0
 	msgbox Text_PleaseComeAgain
 	release
 	end
@@ -72,7 +72,6 @@ ViridianCity_Mart_Items::
 	.2byte ITEM_NONE
 	release
 	end
-
 ViridianCity_Mart_EventScript_SayHiToOak::
 	msgbox ViridianCity_Mart_Text_SayHiToOakForMe
 	release

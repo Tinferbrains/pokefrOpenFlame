@@ -8,6 +8,9 @@
 .set __special__, 0
 	.align 2
 gSpecials::
+	def_special randomGrass
+	def_special randomFire
+	def_special randomWater
 	def_special HealPlayerParty
 	def_special SetCableClubWarp
 	def_special DoCableClubWarp

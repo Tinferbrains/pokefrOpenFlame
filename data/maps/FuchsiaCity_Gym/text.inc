@@ -6,10 +6,8 @@ FuchsiaCity_Gym_Text_KogaIntro::
     .string "with mirth!\p"
     .string "Very well, I shall show you true\n"
     .string "terror as a ninja master.\p"
-    .string "Poison brings steady doom.\n"
-    .string "Sleep renders foes helpless.\p"
-    .string "Despair to the creeping horror of\n"
-    .string "POISON-type POKéMON!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
+    .string "Despair to the power of\n"
+    .string "FIGHTING-type POKéMON!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
 
 FuchsiaCity_Gym_Text_KogaDefeat::
     .string "Humph!\n"
@@ -18,27 +16,24 @@ FuchsiaCity_Gym_Text_KogaDefeat::
     .string "Take the SOULBADGE!$"
 
 FuchsiaCity_Gym_Text_KogaPostBattle::
-    .string "When afflicted by TOXIC, a POKéMON\n"
-    .string "suffers more and more.\p"
-    .string "It suffers worsening damage as the\n"
-    .string "battle wears on!\p"
-    .string "It will surely terrorize foes!$"
+    .string "When using STRENGTH, a POKéMON\n"
+    .string "delivers a swift, hard blow. \n"
+    .string "Outside of battle, it can \p"
+    .string "be used to move boulders.$"
 
 FuchsiaCity_Gym_Text_KogaExplainSoulBadge::
     .string "Now that you have the SOULBADGE,\n"
     .string "the DEFENSE of your POKéMON rises.\p"
-    .string "It also lets you SURF outside of\n"
-    .string "battle.\p"
     .string "Ah!\n"
     .string "Take this, too!$"
 
 FuchsiaCity_Gym_Text_ReceivedTM06FromKoga::
-    .string "{PLAYER} received TM06\n"
+    .string "{PLAYER} received HM04\n"
     .string "from KOGA.$"
 
 FuchsiaCity_Gym_Text_KogaExplainTM06::
-    .string "Sealed within that TM06 lies\n"
-    .string "TOXIC!\p"
+    .string "Sealed within that HM04 lies\n"
+    .string "STRENGTH!\p"
     .string "It is a secret technique dating\n"
     .string "back some four hundred years.$"
 
@@ -46,11 +41,8 @@ FuchsiaCity_Gym_Text_MakeSpaceForThis::
     .string "Make space for this, child!$"
 
 FuchsiaCity_Gym_Text_KaydenIntro::
-    .string "Strength isn't the key for POKéMON.\n"
-    .string "Do you understand this?\p"
-    .string "POKéMON is about strategy!\p"
-    .string "I'll show you how strategy can\n"
-    .string "beat brute strength.$"
+    .string "Strength can be the key for POKéMON.\n"
+    .string "Do you understand this?$"
 
 FuchsiaCity_Gym_Text_KaydenDefeat::
     .string "What?\n"
@@ -83,8 +75,7 @@ FuchsiaCity_Gym_Text_NateDefeat::
     .string "You had me fooled!$"
 
 FuchsiaCity_Gym_Text_NatePostBattle::
-    .string "I like poison and sleep techniques,\n"
-    .string "as they linger after battle!$"
+    .string "I like up close and personal attacks$"
 
 FuchsiaCity_Gym_Text_PhilIntro::
     .string "Stop right there!\p"
@@ -152,5 +143,4 @@ FuchsiaCity_Gym_Text_GymStatuePlayerWon::
     .string "FUCHSIA POKéMON GYM\n"
     .string "LEADER: KOGA\p"
     .string "WINNING TRAINERS:\n"
-    .string "{RIVAL}, {PLAYER}$"
-
+    .string "{RIVAL}, {PLAYER}.$"

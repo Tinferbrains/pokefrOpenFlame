@@ -1,8 +1,8 @@
 ViridianForest_Text_FriendsItchingToBattle::
     .string "I came here with some friends to\n"
-    .string "catch us some BUG POKéMON!\p"
-    .string "They're all itching to get into\n"
-    .string "some POKéMON battles!$"
+    .string "catch us some new BUG POKéMON!\p"
+    .string "There are some rare ones that\n"
+    .string "haven't been seen here before.$"
 
 ViridianForest_Text_RickIntro::
     .string "Hey! You have POKéMON!\n"
@@ -17,9 +17,9 @@ ViridianForest_Text_RickPostBattle::
     .string "Another time, okay?$"
 
 ViridianForest_Text_DougIntro::
-    .string "Yo!\n"
-    .string "You can't jam out if you're a\l"
-    .string "POKéMON TRAINER!$"
+    .string "I'm here feeding \n"
+    .string "My birds. They love \n"
+    .string "CATERPIE and WEEDLE$"
 
 ViridianForest_Text_DougDefeat::
     .string "Huh?\n"
@@ -27,7 +27,7 @@ ViridianForest_Text_DougDefeat::
 
 ViridianForest_Text_DougPostBattle::
     .string "That totally stinks! I'm going to\n"
-    .string "catch some stronger ones!$"
+    .string "raise some stronger ones!$"
 
 ViridianForest_Text_SammyIntro::
     .string "Hey, wait up!\n"
@@ -91,7 +91,8 @@ ViridianForest_Text_CantCatchOwnedMons::
     .string "You can't catch a POKéMON that\n"
     .string "belongs to someone else.\p"
     .string "Throw POKé BALLS only at wild\n"
-    .string "POKéMON to catch them!$"
+    .string "POKéMON to catch the. Do't \n"
+    .string "be a jerk.$"
 
 ViridianForest_Text_WeakenMonsBeforeCapture::
     .string "TRAINER TIPS\p"

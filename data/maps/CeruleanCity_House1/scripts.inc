@@ -83,5 +83,7 @@ CeruleanCity_House1_EventScript_DescribeEarthBadge::
 
 CeruleanCity_House1_EventScript_StopDescribingBadges::
 	msgbox CeruleanCity_House1_Text_ComeVisitAnytime
+        giveitem_msg GiveTea, ITEM_TEA
+        setflag FLAG_GOT_TEA
 	release
 	end
