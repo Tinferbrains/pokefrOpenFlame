@@ -139,7 +139,7 @@ static const u8 *const sStartMenuDescPointers[] = {
     gStartMenuDesc_Pokemon,
     gStartMenuDesc_Bag,
     gStartMenuDesc_Player,
-    gStartMenuDesc_Save,
+//    gStartMenuDesc_Save,
     gStartMenuDesc_Option,
     gStartMenuDesc_Exit,
     gStartMenuDesc_Retire,
