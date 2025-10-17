@@ -24,6 +24,7 @@
 #include "link_rfu.h"
 #include "load_save.h"
 #include "m4a.h"
+#include "save.h"
 #include "map_name_popup.h"
 #include "map_preview_screen.h"
 #include "metatile_behavior.h"
@@ -1538,6 +1539,8 @@ void CB2_WhiteOut(void)
     {
         FieldClearVBlankHBlankCallbacks();
         StopMapMusic();
+        ClearSaveData();
+        DoSoftReset();
         ResetSafariZoneFlag_();
         DoWhiteOut();
         SetInitialPlayerAvatarStateWithDirection(DIR_NORTH);
